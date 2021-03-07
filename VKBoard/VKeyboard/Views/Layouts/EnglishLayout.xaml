@@ -1,0 +1,23 @@
+﻿<models:VKeyboardLayoutPage  xmlns:models="clr-namespace:VKBoard.VKeyboard.Models" x:Class="VKBoard.VKeyboard.Views.Layouts.EnglishLayout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VKBoard.VKeyboard.Views.Layouts" xmlns:keys="clr-namespace:VKBoard.VKeyboard.Views.Keys"
+                             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EnglishLayout" x:Name="e">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox />
+        <TextBlock Grid.Row="1" FontSize="24" Text="ENG" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <keys:VKeyboardKeyControl Grid.Row="2" Symbol="d" AlternativeSymbol="e"/>
+        <Button Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="SWITCH!"/>
+    </Grid>
+</models:VKeyboardLayoutPage>

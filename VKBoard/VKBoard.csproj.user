@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\Layouts\EnglishLayout.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\Layouts\RussianLayout.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\VKeyboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Layouts\EnglishLayout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Layouts\RussianLayout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\VKeyboardPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

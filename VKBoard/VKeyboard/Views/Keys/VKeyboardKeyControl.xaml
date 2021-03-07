@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="VKBoard.VKeyboard.Views.Keys.VKeyboardKeyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VKBoard.VKeyboard.Views.Keys"
+             mc:Ignorable="d" 
+             d:DesignHeight="48" d:DesignWidth="48" Name="e">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <ContentControl>
+        <Button Command="{Binding ElementName=e, Path=PressKeyCommand}">
+            <Grid>
+                <TextBlock Text="ё" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
+                <TextBlock Text="е" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </Button>
+    </ContentControl>
+</UserControl>
