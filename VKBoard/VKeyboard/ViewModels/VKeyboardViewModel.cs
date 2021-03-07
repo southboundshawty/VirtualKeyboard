@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 using VKBoard.VKeyboard.Models;
+using VKBoard.VKeyboard.Services;
 using VKBoard.VKeyboard.Views.Layouts;
 
 namespace VKBoard.VKeyboard.ViewModels
@@ -11,8 +11,12 @@ namespace VKBoard.VKeyboard.ViewModels
     {
         public VKeyboardViewModel()
         {
+            keyboardOperationsService = VKeyboardOperationsService.Instance;
+
             InitializeLayouts();
         }
+
+        private readonly VKeyboardOperationsService keyboardOperationsService;
 
         private VKeyboardLayoutPage[] layouts;
 
@@ -33,27 +37,32 @@ namespace VKBoard.VKeyboard.ViewModels
 
         private void SwitchLayout()
         {
-            int index = layouts.ToList().IndexOf(SelectedLayout);
+            keyboardOperationsService.SwitchLayout();
 
-            if (index + 1 < layouts.Length)
-            {
-                SelectedLayout = layouts[index + 1];
-            }
-            else
-            {
-                SelectedLayout = layouts.FirstOrDefault();
-            }
+            SetKeyboardLayout();
         }
 
         private void InitializeLayouts()
         {
             layouts = new VKeyboardLayoutPage[] { englishLayout, russianLayout };
 
-            SelectedLayout = layouts.FirstOrDefault();
+            SetKeyboardLayout();
 
             foreach (VKeyboardLayoutPage item in layouts)
             {
                 item.OnSwitchLayoutRequest += OnSwitchLayoutRequest;
+            }
+        }
+
+        private void SetKeyboardLayout()
+        {
+            if (keyboardOperationsService.CurrentKeyboardLayout == KeyboardLayout.RUS)
+            {
+                SelectedLayout = russianLayout;
+            }
+            else
+            {
+                SelectedLayout = englishLayout;
             }
         }
 
