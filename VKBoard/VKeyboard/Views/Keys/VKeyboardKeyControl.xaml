@@ -23,8 +23,8 @@
     <ContentControl>
         <Button Command="{Binding ElementName=e, Path=PressKeyCommand}">
             <Grid>
-                <TextBlock Text="ё" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
-                <TextBlock Text="е" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
+                <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
         </Button>
     </ContentControl>

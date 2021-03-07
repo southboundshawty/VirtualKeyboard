@@ -2,15 +2,15 @@
 
 namespace VKBoard.VKeyboard.Services
 {
-    public class VKeyboardSendKeysService
+    public class VKeyboardOperationsService
     {
-        private VKeyboardSendKeysService() { }
+        private VKeyboardOperationsService() { }
 
         private static readonly object lockerObject = new object();
 
-        public static VKeyboardSendKeysService inctance;
+        public static VKeyboardOperationsService inctance;
 
-        public static VKeyboardSendKeysService Instance
+        public static VKeyboardOperationsService Instance
         {
             get
             {
@@ -18,7 +18,7 @@ namespace VKBoard.VKeyboard.Services
                 {
                     if (inctance == null)
                     {
-                        inctance = new VKeyboardSendKeysService();
+                        inctance = new VKeyboardOperationsService();
                     }
 
                     return inctance;
@@ -32,8 +32,19 @@ namespace VKBoard.VKeyboard.Services
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         private static extern short VkKeyScan(char ch);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern short GetKeyState(int keyCode);
+
         private const int KEY_DOWN = 0x0001;
         private const int KEY_UP = 0x0002;
+        private const int KEY_CAPS = 0x14;
+
+        public void PressCAPS()
+        {
+            bool CapsLock = (((ushort)GetKeyState(KEY_CAPS)) & 0xffff) != 0;
+
+            PressKey(KEY_CAPS);
+        }
 
         public void PressKey(char symbol)
         {
@@ -49,10 +60,8 @@ namespace VKBoard.VKeyboard.Services
             SendKey(bytesSymbol, KEY_UP);
         }
 
-        public void DownKey(char symbol)
+        public void DownKey(byte bytesSymbol)
         {
-            byte bytesSymbol = (byte)VkKeyScan(symbol);
-
             SendKey(bytesSymbol, KEY_DOWN);
         }
 

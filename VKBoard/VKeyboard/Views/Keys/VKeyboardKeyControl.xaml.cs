@@ -41,7 +41,12 @@ namespace VKBoard.VKeyboard.Views.Keys
         public ICommand PressKeyCommand => pressKeyCommand ??=
             new VkeyboardCommand(obj =>
             {
-                VKeyboardSendKeysService.Instance.PressKey(Symbol);
+                PressKey();
             });
+
+        private void PressKey()
+        {
+            VKeyboardOperationsService.Instance.PressKey(Symbol);
+        }
     }
 }

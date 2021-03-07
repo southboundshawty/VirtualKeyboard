@@ -5,19 +5,81 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VKBoard.VKeyboard.Views.Layouts" xmlns:keys="clr-namespace:VKBoard.VKeyboard.Views.Keys"
                              mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="{Binding ElementName=keyboardLayoutGrid, Path=ActualHeight}" d:DesignWidth="{Binding ElementName=keyboardLayoutGrid, Path=ActualWidth}"
       Title="EnglishLayout" x:Name="e">
-
-    <Grid>
+    <models:VKeyboardLayoutPage.Resources>
+        <Style TargetType="keys:VKeyboardKeyControl">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Width" Value="64"/>
+            <Setter Property="Height" Value="64"/>
+        </Style>
+    </models:VKeyboardLayoutPage.Resources>
+    <Grid x:Name="keyboardLayoutGrid">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox />
-        <TextBlock Grid.Row="1" FontSize="24" Text="ENG" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="0" Symbol="q" AlternativeSymbol="1"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="0" Symbol="w" AlternativeSymbol="2"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="0" Symbol="e" AlternativeSymbol="3"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="0" Symbol="r" AlternativeSymbol="4"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="0" Symbol="t" AlternativeSymbol="5"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="0" Symbol="y" AlternativeSymbol="6"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="0" Symbol="u" AlternativeSymbol="7"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="0" Symbol="i" AlternativeSymbol="8"/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="0" Symbol="o" AlternativeSymbol="9"/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="0" Symbol="p" AlternativeSymbol="0"/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="0" Symbol="-"/>
+
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="1" Symbol="a"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="1" Symbol="s"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="1" Symbol="d"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="1" Symbol="f"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="1" Symbol="g"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="1" Symbol="h"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="1" Symbol="j"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="1" Symbol="k"/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="1" Symbol="l"/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="1" Symbol=","/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="1" Symbol="\"/>
+
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="2" Symbol="z"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="2" Symbol="x"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="2" Symbol="c"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="2" Symbol="v"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="2" Symbol="b"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="2" Symbol="n"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="2" Symbol="m"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="2" Symbol=","/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="2" Symbol="."/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="2" Symbol="?"/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="2" Symbol="^"/>
+
+        <Button Grid.Column="0" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="123"/>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="7"  Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="________"/>
+        <Button Grid.Column="8" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="(-"/>
+        <Button Grid.Column="9" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="-)"/>
+        <Button Grid.Column="10" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="@"/>
+
+
+
+        <!--<TextBlock Grid.Row="1" FontSize="24" Text="ENG" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <keys:VKeyboardKeyControl Grid.Row="2" Symbol="d" AlternativeSymbol="e"/>
-        <Button Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="SWITCH!"/>
+        <Button Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="SWITCH!"/>-->
     </Grid>
 </models:VKeyboardLayoutPage>
