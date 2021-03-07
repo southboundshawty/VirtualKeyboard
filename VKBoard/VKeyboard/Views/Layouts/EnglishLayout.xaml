@@ -14,7 +14,7 @@
             <Setter Property="Height" Value="64"/>
         </Style>
     </models:VKeyboardLayoutPage.Resources>
-    <Grid x:Name="keyboardLayoutGrid">
+    <Grid x:Name="keyboardLayoutGrid" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

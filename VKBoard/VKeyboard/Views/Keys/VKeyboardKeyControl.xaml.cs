@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Timers;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -16,6 +18,8 @@ namespace VKBoard.VKeyboard.Views.Keys
         {
             InitializeComponent();
         }
+
+        private DateTime pressedDateTime;
 
         public char Symbol
         {
@@ -46,7 +50,24 @@ namespace VKBoard.VKeyboard.Views.Keys
 
         private void PressKey()
         {
-            VKeyboardOperationsService.Instance.PressKey(Symbol);
+            //VKeyboardOperationsService.Instance.PressKey(Symbol);
+        }
+
+        private void Button_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            pressedDateTime = DateTime.Now;
+        }
+
+        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (DateTime.Now.Subtract(pressedDateTime).TotalMilliseconds > 300)
+            {
+                VKeyboardOperationsService.Instance.PressKey(AlternativeSymbol);
+            }
+            else
+            {
+                VKeyboardOperationsService.Instance.PressKey(Symbol);
+            }
         }
     }
 }
