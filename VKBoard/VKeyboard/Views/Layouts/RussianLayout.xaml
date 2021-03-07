@@ -3,17 +3,92 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                             xmlns:keys="clr-namespace:VKBoard.VKeyboard.Views.Keys"
       xmlns:local="clr-namespace:VKBoard.VKeyboard.Views.Layouts"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="300" d:DesignWidth="1000"
       Title="RussianLayout" x:Name="e">
-
-    <Grid>
+    <models:VKeyboardLayoutPage.Resources>
+        <Style TargetType="keys:VKeyboardKeyControl">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Width" Value="64"/>
+            <Setter Property="Height" Value="64"/>
+        </Style>
+    </models:VKeyboardLayoutPage.Resources>
+    <Grid x:Name="keyboardLayoutGrid">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="24" Text="RUS" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Grid.Row="1" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="SWITCH!"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="0" Symbol="й" AlternativeSymbol="1"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="0" Symbol="ц" AlternativeSymbol="2"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="0" Symbol="у" AlternativeSymbol="3"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="0" Symbol="к" AlternativeSymbol="4"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="0" Symbol="е" AlternativeSymbol="5"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="0" Symbol="н" AlternativeSymbol="6"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="0" Symbol="г" AlternativeSymbol="7"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="0" Symbol="ш" AlternativeSymbol="8"/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="0" Symbol="щ" AlternativeSymbol="9"/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="0" Symbol="з" AlternativeSymbol="0"/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="0" Symbol="х" AlternativeSymbol="0"/>
+        <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="0" Symbol="ъ" AlternativeSymbol="0"/>
+        <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="0" Symbol="-"/>
+
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="1" Symbol="ф"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="1" Symbol="ы"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="1" Symbol="в"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="1" Symbol="а"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="1" Symbol="п"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="1" Symbol="р"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="1" Symbol="о"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="1" Symbol="л"/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="1" Symbol="д"/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="1" Symbol="ж"/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="1" Symbol="э"/>
+        <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="1" Symbol=","/>
+        <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="1" Symbol="\"/>
+
+        <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="2" Symbol="я"/>
+        <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="2" Symbol="ч"/>
+        <keys:VKeyboardKeyControl Grid.Column="2" Grid.Row="2" Symbol="с"/>
+        <keys:VKeyboardKeyControl Grid.Column="3" Grid.Row="2" Symbol="м"/>
+        <keys:VKeyboardKeyControl Grid.Column="4" Grid.Row="2" Symbol="и"/>
+        <keys:VKeyboardKeyControl Grid.Column="5" Grid.Row="2" Symbol="т"/>
+        <keys:VKeyboardKeyControl Grid.Column="6" Grid.Row="2" Symbol="ь"/>
+        <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="2" Symbol="б"/>
+        <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="2" Symbol="ю"/>
+        <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="2" Symbol=","/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="2" Symbol="."/>
+        <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="2" Symbol="?"/>
+        <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="2" Symbol="^"/>
+
+        <Button Grid.Column="0" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="123"/>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="9"  Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="________"/>
+        <Button Grid.Column="10" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="(-"/>
+        <Button Grid.Column="11" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="-)"/>
+        <Button Grid.Column="12" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="@"/>
+
+
+
+        <!--<TextBlock Grid.Row="1" FontSize="24" Text="ENG" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <keys:VKeyboardKeyControl Grid.Row="2" Symbol="d" AlternativeSymbol="e"/>
+        <Button Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="SWITCH!"/>-->
     </Grid>
 </models:VKeyboardLayoutPage>
