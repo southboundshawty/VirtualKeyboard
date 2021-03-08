@@ -17,26 +17,26 @@ namespace VKBoard.VKeyboard.Views.Keys
         {
             InitializeComponent();
 
-            timer = new Timer
+            holdKeyTimer = new Timer
             {
                 Enabled = false,
                 Interval = 100
             };
 
-            timer.Elapsed += Timer_Elapsed;
+            holdKeyTimer.Elapsed += Timer_Elapsed;
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                if (pressTime >= holdKeyTime)
+                if (holdedKeyTime >= holdKeyTime && AlternativeSymbol != '\0')
                 {
                     AlternativeSymbolVisibility = Visibility.Visible;
 
-                    timer.Enabled = false;
+                    holdKeyTimer.Enabled = false;
 
-                    pressTime = 0;
+                    holdedKeyTime = 0;
 
                     return;
                 }
@@ -45,17 +45,18 @@ namespace VKBoard.VKeyboard.Views.Keys
                     AlternativeSymbolVisibility = Visibility.Collapsed;
                 }
 
-                pressTime += 100;
+                holdedKeyTime += 100;
             });
 
         }
 
         private const int holdKeyTime = 300;
 
-        private DateTime pressedDateTime;
+        private DateTime holdKeyDateTime;
 
-        private readonly Timer timer;
-        private int pressTime = 0;
+        private readonly Timer holdKeyTimer;
+
+        private int holdedKeyTime = 0;
 
         public char Symbol
         {
@@ -75,7 +76,7 @@ namespace VKBoard.VKeyboard.Views.Keys
 
         // Using a DependencyProperty as the backing store for AlternativeSymbol.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AlternativeSymbolProperty =
-            DependencyProperty.Register("AlternativeSymbol", typeof(char), typeof(VKeyboardKeyControl), new PropertyMetadata(default));
+            DependencyProperty.Register("AlternativeSymbol", typeof(char), typeof(VKeyboardKeyControl), new PropertyMetadata('\0'));
 
         public Visibility AlternativeSymbolVisibility
         {
@@ -89,19 +90,18 @@ namespace VKBoard.VKeyboard.Views.Keys
 
         private void Button_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            pressedDateTime = DateTime.Now;
+            holdKeyDateTime = DateTime.Now;
 
-            timer.Enabled = true;
+            holdKeyTimer.Enabled = true;
 
-            //alternativeSymbolPopUp.IsOpen = AlternativeSymbol != '\0';
             alternativeSymbolPopUp.IsOpen = true;
         }
 
         private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            timer.Enabled = false;
+            holdKeyTimer.Enabled = false;
 
-            if (DateTime.Now.Subtract(pressedDateTime).TotalMilliseconds > holdKeyTime)
+            if (DateTime.Now.Subtract(holdKeyDateTime).TotalMilliseconds >= holdKeyTime)
             {
                 VKeyboardOperationsService.Instance.PressKey(AlternativeSymbol);
             }

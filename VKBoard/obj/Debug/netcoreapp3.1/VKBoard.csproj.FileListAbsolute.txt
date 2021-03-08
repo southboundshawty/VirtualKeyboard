@@ -27,3 +27,4 @@ C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcorea
 C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcoreapp3.1\VKBoard.dll
 C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcoreapp3.1\VKBoard.pdb
 C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcoreapp3.1\VKBoard.genruntimeconfig.cache
+C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcoreapp3.1\VKBoard.csprojAssemblyReference.cache

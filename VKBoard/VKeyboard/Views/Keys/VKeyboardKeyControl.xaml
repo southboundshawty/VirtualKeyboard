@@ -19,7 +19,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Name="f" x:Key="f" TargetType="Grid">
+        <Style x:Key="alternativeSymbolPlacement" TargetType="Grid">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="Green"/>
@@ -43,13 +43,13 @@
             <Grid>
                 <Rectangle Width="{Binding ElementName=e,Path=ActualWidth}" Height="128" RadiusX="8" RadiusY="8" Fill="Gray"/>
                 <Border VerticalAlignment="Top" HorizontalAlignment="Center">
-                    <Grid Style="{StaticResource f}" Margin="16" >
+                    <Grid Style="{StaticResource alternativeSymbolPlacement}" Margin="16" >
                         <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" />
                     </Grid>
                 </Border>
-                <Border Background="LightBlue" CornerRadius="8" Visibility="{Binding ElementName=e,Path=AlternativeSymbolVisibility}" VerticalAlignment="Top" HorizontalAlignment="Center">
-                    <Grid Style="{StaticResource f}" Margin="16">
-                        <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="21" />
+                <Border Background="LightBlue" Width="{Binding ElementName=e,Path=ActualWidth}" CornerRadius="8" Visibility="{Binding ElementName=e,Path=AlternativeSymbolVisibility}" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Grid Style="{StaticResource alternativeSymbolPlacement}" Margin="16">
+                        <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" />
                     </Grid>
                 </Border>
             </Grid>
