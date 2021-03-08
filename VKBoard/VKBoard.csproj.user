@@ -10,6 +10,9 @@
     <Compile Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VKeyboard\Views\Layouts\EnglishLayout.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VKeyboard\Views\Layouts\EnglishLayout.xaml">

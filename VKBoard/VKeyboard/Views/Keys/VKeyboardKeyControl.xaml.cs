@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,33 +42,26 @@ namespace VKBoard.VKeyboard.Views.Keys
         public static readonly DependencyProperty AlternativeSymbolProperty =
             DependencyProperty.Register("AlternativeSymbol", typeof(char), typeof(VKeyboardKeyControl), new PropertyMetadata(default));
 
-        private ICommand pressKeyCommand;
-        public ICommand PressKeyCommand => pressKeyCommand ??=
-            new VkeyboardCommand(obj =>
-            {
-                PressKey();
-            });
-
-        private void PressKey()
-        {
-            //VKeyboardOperationsService.Instance.PressKey(Symbol);
-        }
-
         private void Button_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             pressedDateTime = DateTime.Now;
+
+            alternativeSymbolPopUp.IsOpen = AlternativeSymbol != '\0';
         }
 
         private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (DateTime.Now.Subtract(pressedDateTime).TotalMilliseconds > 300)
             {
+
                 VKeyboardOperationsService.Instance.PressKey(AlternativeSymbol);
             }
             else
             {
                 VKeyboardOperationsService.Instance.PressKey(Symbol);
             }
+
+            alternativeSymbolPopUp.IsOpen = false;
         }
     }
 }

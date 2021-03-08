@@ -18,19 +18,31 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style x:Name="f" x:Key="f" TargetType="Grid">
             <Style.Triggers>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="Gray"/>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Green"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <ContentControl>
-        <Button Command="{Binding ElementName=e, Path=PressKeyCommand}" PreviewMouseDown="Button_PreviewMouseDown" PreviewMouseUp="Button_PreviewMouseUp">
+    <Grid>
+        <ContentControl x:Name="symbol">
+            <Button PreviewMouseDown="Button_PreviewMouseDown" PreviewMouseUp="Button_PreviewMouseUp">
+                <Grid>
+                    <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
+                    <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </ContentControl>
+        <Popup x:Name="alternativeSymbolPopUp" Height="128" AllowsTransparency="True" VerticalOffset="{Binding ElementName=e,Path=ActualHeight}" Placement="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 8 0" Visibility="Collapsed">
             <Grid>
-                <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
-                <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Rectangle Width="{Binding ElementName=e,Path=ActualWidth}" Height="128" RadiusX="8" RadiusY="8" Fill="Gray"/>
+                <Grid Style="{StaticResource f}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="16">
+                    <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="21" />
+                </Grid>
             </Grid>
-        </Button>
-    </ContentControl>
+        </Popup>
+    </Grid>
 </UserControl>

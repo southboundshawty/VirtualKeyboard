@@ -1,9 +1,11 @@
-﻿<models:VKeyboardLayoutPage  xmlns:models="clr-namespace:VKBoard.VKeyboard.Models" x:Class="VKBoard.VKeyboard.Views.Layouts.RussianLayout"
+﻿<models:VKeyboardLayoutPage  
+      xmlns:models="clr-namespace:VKBoard.VKeyboard.Models" 
+      x:Class="VKBoard.VKeyboard.Views.Layouts.RussianLayout"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-                             xmlns:keys="clr-namespace:VKBoard.VKeyboard.Views.Keys"
+      xmlns:keys="clr-namespace:VKBoard.VKeyboard.Views.Keys"
       xmlns:local="clr-namespace:VKBoard.VKeyboard.Views.Layouts"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="1000"
@@ -47,8 +49,8 @@
         <keys:VKeyboardKeyControl Grid.Column="7" Grid.Row="0" Symbol="ш" AlternativeSymbol="8"/>
         <keys:VKeyboardKeyControl Grid.Column="8" Grid.Row="0" Symbol="щ" AlternativeSymbol="9"/>
         <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="0" Symbol="з" AlternativeSymbol="0"/>
-        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="0" Symbol="х" AlternativeSymbol="0"/>
-        <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="0" Symbol="ъ" AlternativeSymbol="0"/>
+        <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="0" Symbol="х"/>
+        <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="0" Symbol="ъ"/>
         <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="0" Symbol="-"/>
 
         <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="1" Symbol="ф"/>
