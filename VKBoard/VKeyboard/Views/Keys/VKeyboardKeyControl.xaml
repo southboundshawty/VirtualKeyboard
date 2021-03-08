@@ -37,11 +37,21 @@
             </Button>
         </ContentControl>
         <Popup x:Name="alternativeSymbolPopUp" Height="128" AllowsTransparency="True" VerticalOffset="{Binding ElementName=e,Path=ActualHeight}" Placement="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 8 0" Visibility="Collapsed">
+            <!--<Popup.Effect>
+                <DropShadowEffect BlurRadius="8" Direction="90" ShadowDepth="5" Color="Black" Opacity="1"/>
+            </Popup.Effect>-->
             <Grid>
                 <Rectangle Width="{Binding ElementName=e,Path=ActualWidth}" Height="128" RadiusX="8" RadiusY="8" Fill="Gray"/>
-                <Grid Style="{StaticResource f}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="16">
-                    <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="21" />
-                </Grid>
+                <Border VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Grid Style="{StaticResource f}" Margin="16" >
+                        <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" />
+                    </Grid>
+                </Border>
+                <Border Background="LightBlue" CornerRadius="8" Visibility="{Binding ElementName=e,Path=AlternativeSymbolVisibility}" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Grid Style="{StaticResource f}" Margin="16">
+                        <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="21" />
+                    </Grid>
+                </Border>
             </Grid>
         </Popup>
     </Grid>
