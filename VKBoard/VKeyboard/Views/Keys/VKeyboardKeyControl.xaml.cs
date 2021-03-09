@@ -33,7 +33,7 @@ namespace VKBoard.VKeyboard.Views.Keys
                 if (holdedKeyTime >= holdKeyTime && AlternativeSymbol != '\0')
                 {
                     AlternativeSymbolVisibility = Visibility.Visible;
-
+                    alternativeSymbolPopUp.IsOpen = true;
                     holdKeyTimer.Enabled = false;
 
                     holdedKeyTime = 0;
@@ -50,7 +50,7 @@ namespace VKBoard.VKeyboard.Views.Keys
 
         }
 
-        private const int holdKeyTime = 300;
+        private const int holdKeyTime = 200;
 
         private DateTime holdKeyDateTime;
 
@@ -88,16 +88,14 @@ namespace VKBoard.VKeyboard.Views.Keys
         public static readonly DependencyProperty AlternativeSymbolVisibilityProperty =
             DependencyProperty.Register("AlternativeSymbolVisibility", typeof(Visibility), typeof(VKeyboardKeyControl), new PropertyMetadata(Visibility.Collapsed));
 
-        private void Button_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void Button_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             holdKeyDateTime = DateTime.Now;
 
             holdKeyTimer.Enabled = true;
-
-            alternativeSymbolPopUp.IsOpen = true;
         }
 
-        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        private void Button_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             holdKeyTimer.Enabled = false;
 

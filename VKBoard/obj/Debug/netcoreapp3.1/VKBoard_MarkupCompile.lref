@@ -1,9 +1,13 @@
 ﻿
-
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\MainWindow.xaml;;
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\VKeyboard\Views\Keys\VKeyboardKeyControl.xaml;;
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml;;
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\VKeyboard\Views\Layouts\EnglishLayout.xaml;;
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\VKeyboard\Views\Layouts\RussianLayout.xaml;;
-FC:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\VKeyboard\Views\VKeyboardPage.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\App.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\MainWindow.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardArrowLeftKey.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardArrowRightKey.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardBackspaceKey.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardKeyControl.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardLanguageKey.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Keys\VKeyboardSpaceKey.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Layouts\EnglishLayout.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\Layouts\RussianLayout.xaml;;
+FC:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\VKeyboard\Views\VKeyboardPage.xaml;;
 

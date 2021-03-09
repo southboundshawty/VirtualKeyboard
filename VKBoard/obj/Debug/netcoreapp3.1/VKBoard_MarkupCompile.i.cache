@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\obj\Debug\netcoreapp3.1\
+C:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\obj\Debug\netcoreapp3.1\
 VKBoard
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\steve\Desktop\Visual Studio projects\VKBoard\VKBoard\App.xaml
-61082689176
+C:\Users\d.cybal\Desktop\Projects\VirtualKeyboard\VKBoard\App.xaml
+101977112203
 
-14449721224
+1915346255
 1921654412462
-MainWindow.xaml;VKeyboard\Views\Keys\VKeyboardKeyControl.xaml;VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml;VKeyboard\Views\Layouts\EnglishLayout.xaml;VKeyboard\Views\Layouts\RussianLayout.xaml;VKeyboard\Views\VKeyboardPage.xaml;
+MainWindow.xaml;VKeyboard\Views\Keys\VKeyboardArrowLeftKey.xaml;VKeyboard\Views\Keys\VKeyboardArrowRightKey.xaml;VKeyboard\Views\Keys\VKeyboardBackspaceKey.xaml;VKeyboard\Views\Keys\VKeyboardKeyControl.xaml;VKeyboard\Views\Keys\VKeyboardLanguageKey.xaml;VKeyboard\Views\Keys\VKeyboardSpaceKey.xaml;VKeyboard\Views\Layouts\EnglishLayout.xaml;VKeyboard\Views\Layouts\RussianLayout.xaml;VKeyboard\Views\VKeyboardPage.xaml;
 
 True
 

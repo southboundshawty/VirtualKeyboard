@@ -7,10 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardArrowLeftKey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardArrowRightKey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardBackspaceKey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml.cs">
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardLanguageKey.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VKeyboard\Views\Keys\VKeyboardSpaceKey.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="VKeyboard\Views\Layouts\EnglishLayout.xaml.cs">
@@ -27,10 +39,22 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardArrowLeftKey.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardArrowRightKey.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardBackspaceKey.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="VKeyboard\Views\Keys\VKeyboardKeyControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VKeyboard\Views\Keys\VKeyboardSpacialKeyControl.xaml">
+    <Page Update="VKeyboard\Views\Keys\VKeyboardLanguageKey.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VKeyboard\Views\Keys\VKeyboardSpaceKey.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VKeyboard\Views\Layouts\EnglishLayout.xaml">

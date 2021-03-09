@@ -65,6 +65,10 @@ namespace VKBoard.VKeyboard.Services
         private const int KEY_UP_FLAG = 0x0002;
 
         private const int KEY_CAPS = 0x14;
+        private const int KEY_BACK_SPACE = 0x08;
+        private const int KEY_SPACE = 0x20;
+        private const int KEY_ARROW_LEFT = 0x25;
+        private const int KEY_ARROW_RIGHT = 0x27;
 
         private const string RUS_LYT = "00000419";
         private const string ENG_LYT = "00000409";
@@ -77,6 +81,26 @@ namespace VKBoard.VKeyboard.Services
 
         //    PressKey(KEY_CAPS);
         //}
+
+        public void PressArrowLeftKey()
+        {
+            PressKey(KEY_ARROW_LEFT);
+        }
+
+        public void PressArrowRightKey()
+        {
+            PressKey(KEY_ARROW_RIGHT);
+        }
+
+        public void PressSpaceKey()
+        {
+            PressKey(KEY_SPACE);
+        }
+
+        public void PressBackspaceKey()
+        {
+            PressKey(KEY_BACK_SPACE);
+        }
 
         public void PressKey(char symbol)
         {
@@ -106,8 +130,6 @@ namespace VKBoard.VKeyboard.Services
         {
             StringBuilder input = new StringBuilder();
 
-            //IntPtr layout = GetKeyboardLayout((int)GetWindowThreadProcessId(GetForegroundWindow(), IntPtr.Zero));
-
             GetKeyboardLayoutName(input);
 
             if (input.ToString() == RUS_LYT)
@@ -127,7 +149,9 @@ namespace VKBoard.VKeyboard.Services
             else
             {
                 LoadKeyboardLayout(RUS_LYT, 1);
-            }
+            } 
+
+            GetKeyboardLayoutType();
         }
 
         private void SendKey(byte bytesSymbol, int dwFlag)

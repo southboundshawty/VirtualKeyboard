@@ -11,11 +11,6 @@
       d:DesignHeight="300" d:DesignWidth="1000"
       Title="RussianLayout" x:Name="e">
     <models:VKeyboardLayoutPage.Resources>
-        <Style TargetType="keys:VKeyboardKeyControl">
-            <Setter Property="Margin" Value="4"/>
-            <Setter Property="Width" Value="64"/>
-            <Setter Property="Height" Value="64"/>
-        </Style>
     </models:VKeyboardLayoutPage.Resources>
     <Grid x:Name="keyboardLayoutGrid" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
@@ -51,7 +46,7 @@
         <keys:VKeyboardKeyControl Grid.Column="9" Grid.Row="0" Symbol="з" AlternativeSymbol="0"/>
         <keys:VKeyboardKeyControl Grid.Column="10" Grid.Row="0" Symbol="х"/>
         <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="0" Symbol="ъ"/>
-        <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="0" Symbol="-"/>
+        <keys:VKeyboardBackspaceKey Grid.Column="12" Grid.Row="0"/> 
 
         <keys:VKeyboardKeyControl Grid.Column="0" Grid.Row="1" Symbol="ф"/>
         <keys:VKeyboardKeyControl Grid.Column="1" Grid.Row="1" Symbol="ы"/>
@@ -81,11 +76,10 @@
         <keys:VKeyboardKeyControl Grid.Column="11" Grid.Row="2" Symbol="?"/>
         <keys:VKeyboardKeyControl Grid.Column="12" Grid.Row="2" Symbol="^"/>
 
-        <Button Grid.Column="0" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="123"/>
-        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="9"  Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="________"/>
-        <Button Grid.Column="10" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="(-"/>
-        <Button Grid.Column="11" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="-)"/>
-        <Button Grid.Column="12" Grid.Row="3" Command="{Binding ElementName=e, Path=SwitchLayoutCommand}" Content="@"/>
+        <keys:VKeyboardSpaceKey Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="10"/>
+        <keys:VKeyboardArrowLeftKey Grid.Column="10" Grid.Row="3"/>
+        <keys:VKeyboardArrowRightKey Grid.Column="11" Grid.Row="3"/>
+        <keys:VKeyboardLanguageKey Grid.Column="12" Grid.Row="3" SwitchLanguageCommand="{Binding ElementName=e, Path=SwitchLayoutCommand}"/>
 
 
 

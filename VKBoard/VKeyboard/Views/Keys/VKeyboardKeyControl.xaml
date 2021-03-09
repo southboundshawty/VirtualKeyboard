@@ -7,18 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="48" d:DesignWidth="48" Name="e">
     <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Focusable" Value="False"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="8">
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="alternativeSymbolPlacement" TargetType="Grid">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -29,25 +17,25 @@
     </UserControl.Resources>
     <Grid>
         <ContentControl x:Name="symbol">
-            <Button PreviewMouseDown="Button_PreviewMouseDown" PreviewMouseUp="Button_PreviewMouseUp">
+            <Button  Style="{DynamicResource VKey}" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Button_PreviewMouseLeftButtonUp" Stylus.IsPressAndHoldEnabled="False">
                 <Grid>
                     <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 2"/>
                     <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
             </Button>
         </ContentControl>
-        <Popup x:Name="alternativeSymbolPopUp" Height="128" AllowsTransparency="True" VerticalOffset="{Binding ElementName=e,Path=ActualHeight}" Placement="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 8 0" Visibility="Collapsed">
+        <Popup x:Name="alternativeSymbolPopUp" Height="128" AllowsTransparency="True" VerticalOffset="{Binding ElementName=symbol,Path=ActualHeight}" Placement="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
             <!--<Popup.Effect>
                 <DropShadowEffect BlurRadius="8" Direction="90" ShadowDepth="5" Color="Black" Opacity="1"/>
             </Popup.Effect>-->
             <Grid>
-                <Rectangle Width="{Binding ElementName=e,Path=ActualWidth}" Height="128" RadiusX="8" RadiusY="8" Fill="Gray"/>
+                <Rectangle Width="{Binding ElementName=symbol,Path=ActualWidth}" Height="128" RadiusX="8" RadiusY="8" Fill="Gray"/>
                 <Border VerticalAlignment="Top" HorizontalAlignment="Center">
                     <Grid Style="{StaticResource alternativeSymbolPlacement}" Margin="16" >
                         <TextBlock Text="{Binding ElementName=e, Path=Symbol}" FontSize="21" />
                     </Grid>
                 </Border>
-                <Border Background="LightBlue" Width="{Binding ElementName=e,Path=ActualWidth}" CornerRadius="8" Visibility="{Binding ElementName=e,Path=AlternativeSymbolVisibility}" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Border Background="LightBlue" Width="{Binding ElementName=symbol,Path=ActualWidth}" Height="{Binding ElementName=symbol,Path=ActualHeight}" CornerRadius="8" Visibility="{Binding ElementName=e,Path=AlternativeSymbolVisibility}" VerticalAlignment="Top" HorizontalAlignment="Center">
                     <Grid Style="{StaticResource alternativeSymbolPlacement}" Margin="16">
                         <TextBlock Text="{Binding ElementName=e, Path=AlternativeSymbol}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21" />
                     </Grid>
